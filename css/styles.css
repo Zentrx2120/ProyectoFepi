@@ -10796,3 +10796,8 @@ header.masthead .post-heading .meta a {
     font-size: 2.25rem;
   }
 }
+
+.custom-image {
+  width: 180px; /* Ancho de la imagen */
+  height: 200px; /* Altura de la imagen */
+}
