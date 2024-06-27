@@ -1,24 +1,33 @@
 <?php
 
-// Conectar a la base de datos
-$host = "localhost";
-$db = "chefcode";
-$charset = "utf8mb4";
-$user = "root";
-$pass = "";
-
-$options = [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES => false,
-];
-
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-try{
-    $pdo = new PDO($dsn, $user, $pass, $options);
-    echo "Conectado";
-} catch (PDOException $e) {
-    throw new PDOException($e->getMessage(), (int)$e->getCode());
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    processContactForm();
 }
 
+function processContactForm() {
+    // Incluir archivo de conexión y configuración de PDO
+    require_once "create.php";
+
+    // Recoger datos del formulario y limpiarlos
+    $boleta = htmlspecialchars($_POST["boleta"]);
+    $nombre = htmlspecialchars($_POST["nombre"]);
+    $email = htmlspecialchars($_POST["email"]);
+    $edad = htmlspecialchars($_POST["edad"]);
+    $peso = htmlspecialchars($_POST["peso"]);
+    $estatura = htmlspecialchars($_POST["estatura"]);
+
+    // Preparar consulta SQL con sentencia preparada
+    $sql = "INSERT INTO registro (boleta, nombre, email, edad, peso, estatura) VALUES (?, ?, ?, ?, ?, ?)";
+
+    try {
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$boleta, $nombre, $email, $edad, $peso, $estatura]);
+
+        // Redirigir a esta misma página después de guardar los datos
+        header("Location: contact.php");
+        exit();
+    } catch (PDOException $e) {
+        echo "Error al procesar la solicitud: " . $e->getMessage();
+    }
+}
 ?>
