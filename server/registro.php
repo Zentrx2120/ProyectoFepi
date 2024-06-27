@@ -15,13 +15,14 @@ function processContactForm() {
     $edad = htmlspecialchars($_POST["edad"]);
     $peso = htmlspecialchars($_POST["peso"]);
     $estatura = htmlspecialchars($_POST["estatura"]);
+    $calorias = htmlspecialchars($_POST["calorias"]);
 
     // Preparar consulta SQL con sentencia preparada
-    $sql = "INSERT INTO registro (boleta, nombre, email, edad, peso, estatura) VALUES (?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO registro (boleta, nombre, email, edad, peso, estatura, calorias) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     try {
         $stmt = $pdo->prepare($sql);
-        $stmt->execute([$boleta, $nombre, $email, $edad, $peso, $estatura]);
+        $stmt->execute([$boleta, $nombre, $email, $edad, $peso, $estatura, $calorias]);
 
         // Redirigir a esta misma página después de guardar los datos
         header("Location: contact.php");

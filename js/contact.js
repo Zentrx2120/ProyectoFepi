@@ -4,7 +4,8 @@ const usuario = {
     email: '',
     edad: '',
     peso: '',
-    estatura: ''
+    estatura: '',
+    calorias: ''
 };
 
 let usuarioArray = [];
@@ -18,6 +19,7 @@ function processContactForm(e) {
     usuario.edad = document.forms["fcontact"]["edad"].value;
     usuario.peso = document.forms["fcontact"]["peso"].value;
     usuario.estatura = document.forms["fcontact"]["estatura"].value;
+    usuario.calorias = document.forms["fcontact"]["calorias"].value;
 
     let usuarioJson = JSON.stringify(usuario);
 

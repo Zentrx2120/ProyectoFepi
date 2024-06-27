@@ -11,7 +11,8 @@
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="Cafe.php">Café</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="CafeIA.php">Café IA</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="CafeGes.php">Café Gestión</a></li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.php">LogIn</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.php">Registrarse</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="LogIn.php">LogIn</a></li>
             </ul>
         </div>
     </div>

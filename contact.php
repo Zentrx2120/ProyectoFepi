@@ -46,11 +46,15 @@
                             </div>
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="peso" name="peso" type="number" placeholder="Ingresa tu peso (kg)" required />
-                                <label for="peso">Peso</label>
+                                <label for="peso">Peso (kg)</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="estatura" name="estatura" type="number" placeholder="Ingresa tu estatura (cm)" required />
-                                <label for="estatura">Estatura</label>
+                                <label for="estatura">Estatura (cm)</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="calorias" name="calorias" type="number" placeholder="calorias" required />
+                                <label for="calorias">Calorias</label>
                             </div>
                             <button class="btn btn-primary" style="border-radius: 0px;" type="submit">Guardar</button>
                         </form>
